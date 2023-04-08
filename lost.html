@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>I need care</title>
+
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./dist/css/main.min.css">
+
+</head>
+
+<body>
+	<!-- modal -->
+	<div class="modal__wrapper">
+		<div class="form">
+			<form action="#" id="form" class="form__body">
+				<div class="form__block ">
+					<h1 class="form__title">Форма</h1>
+					<button class="close-btn" type="submit">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+							<title>close</title>
+							<path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+						</svg>	
+					</button>
+				</div>
+				
+				<div class="form__item">
+					<label for="formName" class="form__label">Імя*:</label>
+					<input id="formName" type="text" name="name" class="form__input _req">
+				</div>
+				<div class="form__item">
+					<label for="formEmail" class="form__label">E-mail*:</label>
+					<input id="formEmail" type="text" name="email" class="form__input _req _email">
+				</div>
+				<div class="form__item">
+					<div class="form__label">Загубили або Знайшли</div>
+					<div class="options">
+						<div class="options__item">
+							<input id="formRightHanded" checked type="radio" value="right" name="hand" class="options__input">
+							<label for="formRightHanded" class="options__label"><span>Загубив</span></label>
+						</div>
+						<div class="options__item">
+							<input id="formLeftHanded" type="radio" value="left" name="hand" class="options__input">
+							<label for="formLeftHanded" class="options__label"><span>Знайшов</span></label>
+						</div>
+					</div>
+				</div>
+				<div class="form__item">
+					<label for="formMessage" class="form__label">Опис:</label>
+					<textarea name="message" id="formMessage" class="form__input"></textarea>
+				</div>
+				<div class="form__item">
+					<div class="form__label">Тип тварини:</div>
+					<select name="age" class="form__select">
+						<option value="от 18 до 25" selected>Собака</option>
+						<option value="от 25 до 45">Кіт</option>
+						<option value="от 45">Шиншила</option>
+						<option value="от 45">Кролик</option>
+						<option value="от 45">Єнот</option>
+					</select>
+				</div>
+				<div class="form__item">
+					<div class="form__label">Прикріпти фото</div>
+					<div class="file">
+						<div class="file__item">
+							<input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+							<div class="file__button">Вибрать</div>
+						</div>
+						<div id="formPreview" class="file__preview"></div>
+					</div>
+				</div>
+				<div class="form__item">
+					<div class="checkbox">
+						<input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
+						<label for="formAgreement" class="checkbox__label"><span>Я даю свою згоду на оброку персональних відповідно до <a href="">умов</a>*</span></label>
+					</div>
+				</div>
+				<button type="submit" class="form__button">Відправити</button>
+			</form>
+		</div>
+	</div>
+	<!-- Header ------------------------- -->
+
+	<header>
+		<nav class="navbar navbar-expand-xl bg-dark care-navbar" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="img/logo.svg" alt="I need care" width="32" height="29">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#care_menu" aria-controls="care_menu" aria-expanded="false">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="care_menu">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link " aria-current="page" href="index.html">Про нас</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="found.html">Знайшов</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active " aria-current="page" href="lost.html">Загубив</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="inf.html">Інфо</a>
+						</li>
+					</ul>
+					<form role="search">
+						<input class="form-control" type="search" placeholder="Пошук" aria-label="Search">
+					</form>
+					<a class="nav-link ms-xl-5 px-xl-0" href="#">
+						<img src="img/login_icon.svg" alt="" width="24" height="29">
+						<span class="d-xl-none d-inline ms-3">Увійти</span>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<!-- hero ---------------------------------- -->
+
+		<section class="hero-lost">
+			<div class="container">
+				<div class="hero-lost__wrapper">
+					<div class="hero__about">
+						<h1 class="hero__title">Я ЗАГУБИВ СВОГО УЛЮБЛЕНЦЯ!</h1>
+						<p class="hero__text">
+							Ви можете сповістити про свого загубленого друга та ми допоможемо Вам з пошуком.
+						</p>	
+						<button type="submit" class="hero__btn">ЗАГУБИВ</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- found--------------- -->
+		<section class="found">
+			<div class="container">
+				<div class="found__wrapper">
+					<!-- found------------------- -->
+					<div class="found-nav">
+						<div class="found-nav__memu">
+							<div class="found-nav__item">
+								<button class="accordion active">ВИД
+								<svg width="7" class="icon" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.5 4L0.468911 0.250001L6.53109 0.25L3.5 4Z" fill="#2C6D5E"/>
+								</svg>
+									
+								</button>
+								<div class="panel" style="max-height: 125px;">
+								<a class="panel__link" href="#">Собака <span class="--active"></span></a>
+								<a class="panel__link" href="#">Кіт</a>
+								<a class="panel__link" href="#">Шиншила</a>
+								<a class="panel__link" href="#">Кролик</a>
+								<a class="panel__link" href="#">Єнот</a>
+								</div>
+							</div>
+							<div class="found-nav__item">
+								<button class="accordion active">СТАТЬ
+								<svg width="7" class="icon" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.5 4L0.468911 0.250001L6.53109 0.25L3.5 4Z" fill="#2C6D5E"/>
+								</svg>
+									
+								</button>
+								<div class="panel">
+								<a class="panel__link" href="#">Собака <span class="--active"></span></a>
+								<a class="panel__link" href="#">Кіт</a>
+								<a class="panel__link" href="#">Шиншила</a>
+								<a class="panel__link" href="#">Кролик</a>
+								<a class="panel__link" href="#">Єнот</a>
+								</div>
+							</div>
+							<div class="found-nav__item">
+								<button class="accordion active">ПОРОДА
+								<svg width="7" class="icon" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.5 4L0.468911 0.250001L6.53109 0.25L3.5 4Z" fill="#2C6D5E"/>
+								</svg>
+									
+								</button>
+								<div class="panel">
+								<a class="panel__link" href="#">Собака <span class="--active"></span></a>
+								<a class="panel__link" href="#">Кіт</a>
+								<a class="panel__link" href="#">Шиншила</a>
+								<a class="panel__link" href="#">Кролик</a>
+								<a class="panel__link" href="#">Єнот</a>
+								</div>
+							</div>
+							<div class="found-nav__item">
+								<button class="accordion active">МІСТО
+								<svg width="7" class="icon" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.5 4L0.468911 0.250001L6.53109 0.25L3.5 4Z" fill="#2C6D5E"/>
+								</svg>
+									
+								</button>
+								<div class="panel">
+								<a class="panel__link" href="#">Собака <span class="--active"></span></a>
+								<a class="panel__link" href="#">Кіт</a>
+								<a class="panel__link" href="#">Шиншила</a>
+								<a class="panel__link" href="#">Кролик</a>
+								<a class="panel__link" href="#">Єнот</a>
+								</div>
+							</div>
+							<div class="found-nav__item">
+								<button class="accordion active">КОЛІР ШЕРСТІ
+								<svg width="7" class="icon" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.5 4L0.468911 0.250001L6.53109 0.25L3.5 4Z" fill="#2C6D5E"/>
+								</svg>
+									
+								</button>
+								<div class="panel">
+								<a class="panel__link" href="#">Собака <span class="--active"></span></a>
+								<a class="panel__link" href="#">Кіт</a>
+								<a class="panel__link" href="#">Шиншила</a>
+								<a class="panel__link" href="#">Кролик</a>
+								<a class="panel__link" href="#">Єнот</a>
+								</div>
+							</div>
+							<div class="found-nav__item">
+								<button class="accordion active">КОЛІР ОЧЕЙ
+								<svg width="7" class="icon" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.5 4L0.468911 0.250001L6.53109 0.25L3.5 4Z" fill="#2C6D5E"/>
+								</svg>
+									
+								</button>
+								<div class="panel">
+								<a class="panel__link" href="#">Собака <span class="--active"></span></a>
+								<a class="panel__link" href="#">Кіт</a>
+								<a class="panel__link" href="#">Шиншила</a>
+								<a class="panel__link" href="#">Кролик</a>
+								<a class="panel__link" href="#">Єнот</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- cart--------------- -->
+					<div class="found__cart">
+						<ul class="found-cart__menu">
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/cart-1.png" alt="Кіт">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Кіт, порода, ж
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Київ</p>
+										<a href="#" class="found-cart__link-date">21.03.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/cart-2.png" alt="Сoбака">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Собака, порода, ч
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Київ</p>
+										<a href="#" class="found-cart__link-date">29.02.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block-1.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block-1.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block-1.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block-1.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block-1.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+							<li class="found-cart__item">
+								<div class="found-cart__img">
+									<img src="./img/Found/img-block-1.png" alt="Фото">
+								</div>
+								<div class="found-cart__about">
+									<h2 class="found-cart__title">
+										Текст, текст, т
+									</h2>
+									<div class="found-cart__menu__sity-block">
+										<p class="found-cart__sity">Місто</p>
+										<a href="#" class="found-cart__link-date">00.00.2022</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- footer -->
+	<footer class="care-footer">
+		<div class="container">
+			<div class="row justify-content-between gy-4">
+				<div class="col-lg-6">
+					<p class="care-footer-logo">
+						<a href="#">
+							I NEED CARE
+						</a>
+					</p>
+					<p class="mb-2">
+						<a href="tel:+380602336456">+38 (060) 233-64-56</a>
+					</p>
+					<p class="mb-2">
+						<a href="tel:+380732876490">+38 (073) 287-64-90</a>
+					</p>
+				</div>
+				<div class="col-lg-5">
+					<ul class="d-flex flex-wrap list-unstyled justify-content-lg-end mt-2 mb-4">
+						<li class="ms-lg-4 me-lg-0 me-4 mb-2">
+							<a href="#" title="Facebook" target="_blank">
+								<img src="img/facebook.svg" alt="">
+							</a>
+						</li>
+						<li class="ms-lg-4 me-lg-0 me-4 mb-2">
+							<a href="#" title="Instagram" target="_blank">
+								<img src="img/instagram.svg" alt="">
+							</a>
+						</li>
+						<li class="ms-lg-4 me-lg-0 me-4 mb-2">
+							<a href="#" title="Telegram" target="_blank">
+								<img src="img/telegram.svg" alt="">
+							</a>
+						</li>
+					</ul>
+					<p class="text-lg-end mb-2">
+						<a href="#" title="Підтримати проект">
+							Підтримати проект
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- script -->
+	<script src="./js/acardion-menu.js"></script>
+	<script src="./js/select.js"></script>
+	<script src="./js/form.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
